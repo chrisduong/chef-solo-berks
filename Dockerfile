@@ -29,5 +29,5 @@ RUN curl -L https://getchef.com/chef/install.sh | bash; \
 # Prepare CHEF
 WORKDIR /chef
 COPY . /chef
-ADD chef-solo-entrypoint /
+ADD chef-solo-entrypoint.sh /
 ENTRYPOINT ["/chef-solo-entrypoint.sh"]
