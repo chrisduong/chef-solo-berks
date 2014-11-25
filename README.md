@@ -3,7 +3,7 @@
 This repository contains Dockerfile  for Docker's automated build published to the public Docker Hub Registry.
 
 ## Base Image
-` ubuntu:14-04
+` ubuntu:12-04
 `
 ## Usage
 - Cookbook path: /etc/chef/cookbooks
