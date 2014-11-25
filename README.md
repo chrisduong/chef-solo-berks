@@ -3,10 +3,12 @@
 This repository contains Dockerfile  for Docker's automated build published to the public Docker Hub Registry.
 
 ## Base Image
-> ubuntu:14-04
-
+` ubuntu:14-04
+`
 ## Usage
 - Cookbook path: /etc/chef/cookbooks
 - Put your recipe in solo.json
 
-> docker run -d --name go-server chrisduong/go-server
+`
+ docker run -v solo.json:/chef chrisduong/chef-solo-berks
+`
