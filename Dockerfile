@@ -4,7 +4,7 @@
 # Date: 11/03/2014
 
 
-FROM ubuntu:14-04
+FROM ubuntu:14.04
 MAINTAINER ChrisD <chris.duong83@gmail.com>
 
 # Install chef and its prerequisites
