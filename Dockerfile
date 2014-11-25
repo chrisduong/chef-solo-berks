@@ -16,9 +16,10 @@ RUN apt-get update -yqq && \
       libxml2-dev \
       libxslt-dev;  \
       apt-get clean; \
-      rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*; \
-      curl -k -L https://getchef.com/chef/install.sh | bash -s -- -P container
-RUN echo 'gem: --no-ri --no-rdoc' > ~/.gemrc; \
+      rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
+      
+RUN curl -L https://getchef.com/chef/install.sh | bash; \
+	echo 'gem: --no-ri --no-rdoc' > ~/.gemrc; \
  	/opt/chef/embedded/bin/gem install berkshelf; \
  	mkdir /etc/chef; \
  	mkdir /chef; \
