@@ -17,14 +17,15 @@ RUN apt-get update -yqq && \
       libxslt-dev;  \
       apt-get clean; \
       rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*; \
-      curl -L https://getchef.com/chef/install.sh | bash -s -- -P container
+      curl -k -L https://getchef.com/chef/install.sh | bash -s -- -P container
 RUN echo 'gem: --no-ri --no-rdoc' > ~/.gemrc; \
  	/opt/chef/embedded/bin/gem install berkshelf; \
  	mkdir /etc/chef; \
+ 	mkdir /chef; \
 	echo "cookbook_path \"/chef/cookbooks\" "  > /chef/solo.rb; \
  	rm -rf /tmp/* /var/tmp/*
 
 # Prepare CHEF
 WORKDIR /chef
 COPY . /chef
-ENTRYPOINT ["chef-solo-entrypoint.sh]
+ENTRYPOINT ["/chef/chef-solo-entrypoint.sh]
